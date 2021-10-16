@@ -8,8 +8,8 @@ function App() {
   const [error, setError] = useState(false)
   const [list, setList] = useState(new Values('#f15025').all(10))
 
-  const handleSubmit = (e) => {
-    e.preventDefault()
+  const handleSubmit = (event) => {
+    event.preventDefault()
     try {
       let colors = new Values(color).all(10)
       setList(colors)
@@ -27,7 +27,7 @@ function App() {
           <input
             type='text'
             value={color}
-            onChange={(e) => setColor(e.target.value)}
+            onChange={(event) => setColor(event.target.value)}
             placeholder='#f15025'
             className={`${error ? 'error' : null}`}
           />
